@@ -1,0 +1,61 @@
+In a family, the people are arranged in rows and columns. Male persons in the families are arranged in a row and females are arranged in a column. Find the eldest woman in each column. Write a program to find the maximum element in each column of the matrix.
+
+Input Format
+
+The input consists of (m*n+2) integers. The first integer corresponds to m, the number of rows in the matrix, and the second integer corresponds to n, the number of columns in the matrix. The remaining integers correspond to the elements in the matrix. The elements are read in row-wise order, the first row first, then the second row, and so on.
+
+Constraints
+
+NA
+
+Output Format
+
+Refer to the sample output for details.
+
+Sample Input 0
+
+3
+2
+4 5
+6 9
+0 3
+Sample Output 0
+
+6
+9
+Explanation 0
+
+Here the maximum element in each column is 6 and 9 respectively and hence it prints, 6 9
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int r=sc.nextInt();
+       int c=sc.nextInt();
+       int arr[][]=new int[r][c];
+       for(int i=0;i<r;i++)
+       {
+        for(int j=0;j<c;j++)
+        {
+            arr[i][j]=sc.nextInt();
+        }
+       }
+        for(int j=0;j<c;j++)
+        {
+            int max=0;
+            for(int i=0;i<r;i++)
+            {
+           if(arr[i][j]>max)
+           {
+            max=arr[i][j];
+           } 
+            }
+            System.out.println(max);
+        }
+       
+    }
+}
