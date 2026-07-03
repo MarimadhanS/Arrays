@@ -1,0 +1,60 @@
+You are given an array of integers. Your task is to find the maximum product of any two elements in the array.
+
+Input Format
+
+The first line contains an integer n, representing the size of the array.
+
+The second line contains n space-separated integers, representing the array elements.
+
+Constraints
+
+NA
+
+Output Format
+
+Print a single integer, the maximum product of any two elements in the array.
+
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+20
+Explanation 0
+
+The maximum product is 4 * 5 = 20.
+
+Sample Input 1
+
+4
+-10 -3 5 -6
+Sample Output 1
+
+60
+Explanation 1
+
+The maximum product is -10 * -6 = 60 (product of two negative numbers is positive).
+
+
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        for (int i=0;i<n;i++) {
+            a[i]=sc.nextInt();
+        }
+        int m= Integer.MIN_VALUE;
+        for (int i=0;i<n;i++) {
+            for (int j=i+1;j<n;j++) {
+                m=Math.max(m,a[i]*a[j]);
+            }
+        }
+        System.out.print(m);
+    }
+}
+
+
