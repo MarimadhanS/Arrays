@@ -1,0 +1,55 @@
+Given a 2D array (matrix), the task is to calculate the sum of all the elements present in the matrix.
+
+Input Format
+
+The first line contains the size of the matrix N (number of rows) and M (number of columns).
+
+The next N lines contain M integers each, representing the matrix.
+
+Constraints
+
+NA
+
+Output Format
+
+The output prints a single integer, the sum of all elements in the matrix.
+
+Sample Input 0
+
+3 3
+1 2 3
+4 5 6
+7 8 9
+Sample Output 0
+
+Sum of Matrix : 45
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int r=sc.nextInt();
+       int c=sc.nextInt();
+       int arr[][]=new int[r][c];
+       for(int i=0;i<r;i++)
+       {
+        for(int j=0;j<c;j++)
+        {
+            arr[i][j]=sc.nextInt();
+        }
+       }
+       int sum=0;
+       for(int i=0;i<r;i++)
+       {
+        for(int j=0;j<c;j++)
+        {
+            sum+=arr[i][j];
+        }
+       }
+       System.out.print("Sum of Matrix : "+sum);
+    }
+}
