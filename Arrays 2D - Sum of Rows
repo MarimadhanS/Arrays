@@ -1,0 +1,70 @@
+Given a matrix of size m x n, write a program to find the sum of elements in each row of the matrix.
+
+Input Format
+
+The input consists of (m*n+2) integers.
+
+The first integer corresponds to m, the number of rows in the matrix.
+
+The second integer corresponds to n, the number of columns in the matrix.
+
+The remaining integers correspond to the elements in the matrix. The elements are read in row-wise order (the first row first, then the second row, and so on).
+
+Constraints
+
+NA
+
+Output Format
+
+The output prints the sum of elements in each row, all in the same line separated by a space.
+
+Sample Input 0
+
+3
+2
+4 5
+6 9
+0 3
+Sample Output 0
+
+9 15 3
+Explanation 0
+
+The sums of the rows are:
+
+Row 1 → 4 + 5 = 9
+
+Row 2 → 6 + 9 = 15
+
+Row 3 → 0 + 3 = 3
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int arr[][]=new int[r][c];
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+              arr[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0;i<r;i++)
+        {
+            int sum=0;
+            for(int j=0;j<c;j++)
+            {
+                sum+=arr[i][j];
+            }
+            System.out.print(sum+" ");
+        }
+    }
+}
